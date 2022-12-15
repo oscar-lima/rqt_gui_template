@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 import os
+import sys
+import signal
+
 import rospy
 import rospkg
 
@@ -36,19 +39,39 @@ class RqtTablesDemo(Plugin):
         # self.foo = None
 
         # publications
-        # self.object_mesh_pub = rospy.Publisher('/grasp_editor/update_object_mesh', String, queue_size=1)
+        # self.object_mesh_pub = rospy.Publisher('my_topic', String, queue_size=1)
 
         # parameters
-        # obj_pkg_name = rospy.get_param('obj_pkg_name', 'mobipick_gazebo')
+        # foo_param = rospy.get_param('foo_param', 'default_value')
 
         ## make a connection between the qt objects and this class methods
         self._widget.cmdHi.clicked.connect(self.foo)
 
         context.add_widget(self._widget)
-        rospy.loginfo('init finished')
+
+        # to catch Ctrl + C signal from keyboard and close stream properly
+        signal.signal(signal.SIGINT, self.signal_handler)
+
+        rospy.loginfo('rqt initialized')
         # end of constructor
 
     # ::::::::::::::  class methods
+
+    def shutdown_plugin(self):
+        rospy.loginfo('I detected you want to quit, calling destructor')
+        self.__del__()
+
+    def signal_handler(self, sig, frame):
+        rospy.loginfo('You pressed Ctrl+C, calling destructor')
+        self.__del__()
+
+    def __del__(self):
+        '''
+        Destructor
+        '''
+        # TODO: perform cleanup
+        rospy.loginfo('bye bye!')
+        sys.exit(0)
 
     def foo(self):
         rospy.loginfo('Hi!')
