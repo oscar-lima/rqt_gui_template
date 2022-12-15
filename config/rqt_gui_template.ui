@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>RqtTablesDemo</class>
- <widget class="QWidget" name="RqtTablesDemo">
+ <class>RqtGUITemplate</class>
+ <widget class="QWidget" name="RqtGUITemplate">
   <property name="enabled">
    <bool>true</bool>
   </property>
@@ -17,9 +17,9 @@
    <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="windowTitle">
-   <string>rqt_grasplan</string>
+   <string>rqt_gui_template</string>
   </property>
-  <widget class="QLabel" name="lblRqtTablesDemoTitle">
+  <widget class="QLabel" name="lblRqtGUITemplateTitle">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -29,7 +29,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;h2 style=&quot; margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:x-large; font-weight:600; color:#3366ff;&quot;&gt;Tables demo!&lt;/span&gt;&lt;/h2&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;h2 style=&quot; margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:x-large; font-weight:600; color:#3366ff;&quot;&gt;TODO demo!&lt;/span&gt;&lt;/h2&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="textFormat">
     <enum>Qt::RichText</enum>

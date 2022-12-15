@@ -13,20 +13,20 @@ from python_qt_binding.QtWidgets import QWidget, QFileDialog, QMessageBox
 
 from std_msgs.msg import String
 
-class RqtTablesDemo(Plugin):
+class RqtGUITemplate(Plugin):
 
     def __init__(self, context):
-        super(RqtTablesDemo, self).__init__(context)
-        rospy.loginfo('Initializing rqt_tables_demo, have a happy pick, place and move and more!')
+        super(RqtGUITemplate, self).__init__(context)
+        rospy.loginfo('Initializing rqt_gui_template, have a happy <TODO> ...')
 
-        self.setObjectName('RqtTablesDemo')
+        self.setObjectName('RqtGUITemplate')
         # Create QWidget
         self._widget = QWidget()
         # Get path to UI file (xml description of the gui window created with qtcreator)
-        ui_file = os.path.join(rospkg.RosPack().get_path('rqt_tables_demo'), 'config', 'rqt_tables_demo.ui')
+        ui_file = os.path.join(rospkg.RosPack().get_path('rqt_gui_template'), 'config', 'rqt_gui_template.ui')
         # Extend the widget with all attributes and children from UI file
         loadUi(ui_file, self._widget)
-        self._widget.setObjectName('rqt_tables_demo.ui')
+        self._widget.setObjectName('rqt_gui_template.ui')
         # Show _widget.windowTitle on left-top of each plugin (when
         # it's set in _widget). This is useful when you open multiple
         # plugins at once. Also if you open multiple instances of your
@@ -52,7 +52,7 @@ class RqtTablesDemo(Plugin):
         # to catch Ctrl + C signal from keyboard and close stream properly
         signal.signal(signal.SIGINT, self.signal_handler)
 
-        rospy.loginfo('rqt initialized')
+        rospy.loginfo('rqt <TODO> initialized')
         # end of constructor
 
     # ::::::::::::::  class methods

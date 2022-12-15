@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>rqt_tables_demo</name>
+  <name>rqt_gui_template</name>
   <version>0.0.1</version>
   <description>A minimal template to start with developing new rqt based ROS friendly applications</description>
 
