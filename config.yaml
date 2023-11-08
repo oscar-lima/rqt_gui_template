@@ -1,0 +1,9 @@
+new_rqt_name: 'rqt_color_publisher'
+class_name: 'RqtColorPublisher'
+author_mail: 'oscar.lima@dfki.de'
+author_name: 'Oscar Lima'
+description: 'rqt to foo and bar.'
+license: 'BSD'
+
+# the folder where to sort the plugin when you run rqt_gui
+category: 'Robot'

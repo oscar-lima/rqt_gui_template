@@ -9,24 +9,22 @@ import rospkg
 
 from qt_gui.plugin import Plugin
 from python_qt_binding import loadUi
-from python_qt_binding.QtWidgets import QWidget, QFileDialog, QMessageBox
+from python_qt_binding.QtWidgets import QWidget
 
-from std_msgs.msg import String
-
-class RqtGUITemplate(Plugin):
+class {{class_name}}(Plugin):
 
     def __init__(self, context):
-        super(RqtGUITemplate, self).__init__(context)
-        rospy.loginfo('Initializing rqt_gui_template, have a happy <TODO> ...')
+        super({{class_name}}, self).__init__(context)
+        rospy.loginfo('Initializing {{rqt_gui_template}}')
 
-        self.setObjectName('RqtGUITemplate')
+        self.setObjectName('{{class_name}}')
         # Create QWidget
         self._widget = QWidget()
         # Get path to UI file (xml description of the gui window created with qtcreator)
-        ui_file = os.path.join(rospkg.RosPack().get_path('rqt_gui_template'), 'config', 'rqt_gui_template.ui')
+        ui_file = os.path.join(rospkg.RosPack().get_path('{{rqt_gui_template}}'), 'config', '{{rqt_gui_template}}.ui')
         # Extend the widget with all attributes and children from UI file
         loadUi(ui_file, self._widget)
-        self._widget.setObjectName('rqt_gui_template.ui')
+        self._widget.setObjectName('{{rqt_gui_template}}.ui')
         # Show _widget.windowTitle on left-top of each plugin (when
         # it's set in _widget). This is useful when you open multiple
         # plugins at once. Also if you open multiple instances of your
@@ -39,20 +37,21 @@ class RqtGUITemplate(Plugin):
         # self.foo = None
 
         # publications
-        # self.object_mesh_pub = rospy.Publisher('my_topic', String, queue_size=1)
+        # TODO
 
         # parameters
-        # foo_param = rospy.get_param('foo_param', 'default_value')
+        foo_param = rospy.get_param('~foo_param', 'default_value')
+        rospy.loginfo(f'foo_param has value: {foo_param}')
 
         ## make a connection between the qt objects and this class methods
-        self._widget.cmdHi.clicked.connect(self.foo)
+        # self._widget.cmdMyButton.clicked.connect(self.foo)
 
         context.add_widget(self._widget)
 
         # to catch Ctrl + C signal from keyboard and close stream properly
         signal.signal(signal.SIGINT, self.signal_handler)
 
-        rospy.loginfo('rqt <TODO> initialized')
+        rospy.loginfo('{{rqt_gui_template}} initialized')
         # end of constructor
 
     # ::::::::::::::  class methods
@@ -73,5 +72,5 @@ class RqtGUITemplate(Plugin):
         rospy.loginfo('bye bye!')
         sys.exit(0)
 
-    def foo(self):
-        rospy.loginfo('Hi!')
+    # def foo(self):
+        # rospy.loginfo('Hi!')

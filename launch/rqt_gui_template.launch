@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- {{description}} -->
+
+  <arg name="foo_param" default="bar"/>
+
+  <node pkg="{{rqt_gui_template}}" type="{{rqt_gui_template}}_node" name="{{rqt_gui_template}}_gui_node"
+        output="screen">
+    <param name="foo_param" value="$(arg foo_param)"/>
+  </node>
+
+</launch>
+

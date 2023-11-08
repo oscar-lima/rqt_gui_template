@@ -1,17 +1,20 @@
 <library path="src">
-  <class name="RqtGUITemplate" type="rqt_gui_template.rqt_gui_template.RqtGUITemplate" base_class_type="rqt_gui_py::Plugin">
+  <class name="{{class_name}}"
+         type="{{rqt_gui_template}}.{{rqt_gui_template}}.{{class_name}}"
+         base_class_type="rqt_gui_py::Plugin">
     <description>
-      rqt gui to TODO.
+      {{description}}
     </description>
     <qtgui>
       <group>
-        <label>Robot</label>
+        <label>{{category}}</label>
         <icon type="theme">folder</icon>
         <statustip>status tip text.</statustip>
       </group>
-      <label>rqt_gui_template!</label>
+      <label>{{rqt_gui_template}}</label>
       <icon type="theme">applications-other</icon>
       <statustip>status tip text 2.</statustip>
     </qtgui>
   </class>
 </library>
+

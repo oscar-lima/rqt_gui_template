@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>rqt_gui_template</name>
+  <name>{{rqt_gui_template}}</name>
   <version>0.0.1</version>
-  <description>A minimal template to start with developing new rqt based ROS friendly applications</description>
+  <description>{{description}}</description>
 
-  <maintainer email="oscar.lima@dfki.de">Oscar Lima</maintainer>
+  <maintainer email="{{author_mail}}">{{author_name}}</maintainer>
 
-  <license>BSD</license>
+  <license>{{license}}</license>
 
-  <author email="oscar.lima@dfki.de">Oscar Lima</author> 
+  <author email="{{author_mail}}">{{author_name}}</author> 
 
   <build_export_depend>rqt_gui</build_export_depend>
   <build_export_depend>rqt_gui_py</build_export_depend>
@@ -23,3 +23,4 @@
   </export>
 
 </package>
+
